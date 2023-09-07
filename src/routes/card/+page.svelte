@@ -1,4 +1,6 @@
 <script>
+	import '$lib/style.css';
+
 	import text from '$lib/assets/card/myIDCardText.svg';
 	import card from '$lib/assets/card/IDCardSample.svg';
 	import bg4 from '$lib/assets/background4.png';
