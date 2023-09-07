@@ -55,6 +55,7 @@
 	function showProject(idx) {
 		state = idx;
 		display = 1;
+		console.log(display);
 	}
 </script>
 
@@ -290,7 +291,9 @@
 
 	/* Project */
 	.proj {
-		position: static;
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: 100vh;
 		width: 100%;
 	}

@@ -15,7 +15,6 @@
 	import icon5 from "$lib/assets/project/icon5.svg";
 
 	export let display;
-	console.log(team);
 </script>
 
 <div class="proj">
@@ -27,7 +26,7 @@
 			<div class="f5411">
 				{#each team as a}
 					<div class="part">
-						<img src={circ} alt="circle">
+						<img src={a.pf_path} alt="circle" class="profile">
 						<p class="cont">{a.role} by {a.name}</p>
 					</div>
 				{/each}
@@ -47,7 +46,7 @@
             <div class="btn-border" />
             <div class="btn-text">확인해보기</div>
         </a>
-        <button>
+        <button on:click={() => {}}>
             <img src={flag} alt="flag">
         </button>
     </div>
@@ -131,8 +130,6 @@
 		top: 59.5em;
 		gap: 1rem;
 		width: 100%;
-		background: rgba(0, 0, 0, 0.60);
-		backdrop-filter: blur(100px);
     }
 
 	.btn {
@@ -172,5 +169,7 @@
 		font-size: 1.75rem;
 	}
 
-
+	.profile {
+		height: 2.625rem;
+	}
 </style>

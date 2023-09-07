@@ -4,6 +4,7 @@
     import leftArrow from "$lib/assets/leftarrow.svg";
     import rightArrow from "$lib/assets/rightarrow.svg";
     import bg4 from "$lib/assets/background4.png";
+	import Header from "../../../components/Header.svelte";
     const portraits = import.meta.glob("$lib/assets/portraits/*.svg");
     const faces = import.meta.glob("$lib/assets/faces/*.svg");
     let name = "Kim Sunrin";
@@ -163,6 +164,8 @@
     }
 
 </script>
+
+<Header />
 
 <div id="makingCard" style="background-image: url({bg4});">
     <div id="centerContents">

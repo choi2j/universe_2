@@ -6,7 +6,10 @@
 	import logo from '$lib/assets/universe_logo.svg';
 	import barcode from '$lib/assets/card/card_barcode.svg';
 	import portrait from '$lib/assets/portraits/portrait00.svg';
+	import Header from '../../components/Header.svelte';
 </script>
+
+<Header />
 
 <div id="card" style="background-image: url({bg4});">
 	<div class="inner">
