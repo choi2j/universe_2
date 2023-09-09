@@ -1,10 +1,12 @@
 <script>
 // @ts-nocheck
+	import { supabase } from "$lib/supabaseClient";
 
 	export let title;
 	export let desc;
 	export let src;
 	export let team;
+	export let gainedLike;
 	import circ from "$lib/assets/props/whiteCircle.svg";
 	import leftArrow from "$lib/assets/leftarrow.svg";
 	import flag from "$lib/assets/project/flag.svg";
@@ -15,6 +17,20 @@
 	import icon5 from "$lib/assets/project/icon5.svg";
 
 	export let display;
+	console.log(gainedLike);
+
+	function giveLikes() {
+		let updated = gainedLike + 1;
+		console.log(updated);
+		const { error } = supabase
+			.from('likes')
+			.update({ likes: updated })
+			.eq('projName', title)
+			.then(console.log('success'))
+			.then(gainedLike++);
+		if (error) console.log(error);
+
+	}
 </script>
 
 <div class="proj">
@@ -46,7 +62,7 @@
             <div class="btn-border" />
             <div class="btn-text">확인해보기</div>
         </a>
-        <button on:click={() => {}}>
+        <button on:click={() => {giveLikes()}}>
             <img src={flag} alt="flag">
         </button>
     </div>

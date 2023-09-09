@@ -3,7 +3,7 @@
 	import Header from '../components/Header.svelte';
 	import Proj from '../components/Proj.svelte';
 
-	import data from '$lib/projData';
+	import data2 from '$lib/projData';
 
 	import bg from '$lib/assets/background1.png';
 
@@ -19,6 +19,9 @@
 
 	import larr from '$lib/assets/leftarrow.svg';
 	import rarr from '$lib/assets/rightarrow.svg';
+
+	export let data;
+	console.log(data);
 
 	let planetSet = [
 		{ name: 'fi', planet: pl1 },
@@ -97,10 +100,11 @@
 
 	<div class={display ? 'proj disflex' : 'proj disnone'}>
 		<Proj
-			title={data[state].title}
-			desc={data[state].desc}
-			src={data[state].src}
-			team={data[state].team}
+			title={data2[state].title}
+			desc={data2[state].desc}
+			src={data2[state].src}
+			team={data2[state].team}
+			gainedLike={data.countries[state].likes}
 			bind:display={display}
 		/>
 	</div>

@@ -41,8 +41,8 @@ let data = [
         ]
     },
     {
-        title: "TFTA",
-        desc: "덱 추천, 증강체 추천 및 비교, 전적 보기 등을 할 수 있는 사이트. op.gg에는 없는 증강체 비교를 시험해 볼 수 있습니다.",
+        title: "DISNS",
+        desc: "무슨 언어를 사용할지 고민이되신다고요? DISNS에서 설명을 읽어보고 선택해보세요. 그냥 선택하는것보다는 유용할 것 입니다.",
         src: "src\\lib\\assets\\project\\icon5.svg",
         team: [
             {role:"Directed", name:"안승일", pf_path: "src\\lib\\assets\\profiles\\seungilAhn.png"},
