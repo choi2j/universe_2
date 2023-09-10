@@ -12,7 +12,7 @@
 	import arrow from '$lib/assets/arrow.svg';
 
 	import pl1 from '$lib/assets/project/clip_planet.svg';
-	import pl2 from '$lib/assets/project/tfta_planet.svg';
+	import pl2 from '$lib/assets/project/disns_planet.svg';
 	import pl3 from '$lib/assets/project/buket_planet.svg';
 	import pl4 from '$lib/assets/project/arcade_planet.svg';
 	import pl5 from '$lib/assets/project/bigbang_planet.svg';

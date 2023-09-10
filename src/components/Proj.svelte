@@ -10,11 +10,6 @@
 	import circ from "$lib/assets/props/whiteCircle.svg";
 	import leftArrow from "$lib/assets/leftarrow.svg";
 	import flag from "$lib/assets/project/flag.svg";
-	import icon1 from "$lib/assets/project/icon1.svg";
-	import icon2 from "$lib/assets/project/icon2.svg";
-	import icon3 from "$lib/assets/project/icon3.svg";
-	import icon4 from "$lib/assets/project/icon4.svg";
-	import icon5 from "$lib/assets/project/icon5.svg";
 
 	export let display;
 	console.log(gainedLike);
