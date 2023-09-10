@@ -203,7 +203,7 @@
 
 	.center {
 		top: calc(100vh + 30vh);
-		left: 40vw;
+		left: 39vw;
 	}
 
 	.th {
@@ -250,7 +250,7 @@
 
 	.center:hover {
 		top: calc(100vh + 30vh - 0.5rem);
-		left: calc(40vw - 0.5rem);
+		left: calc(39vw - 0.5rem);
 	}
 
 	.th:hover {
