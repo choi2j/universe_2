@@ -1,6 +1,5 @@
 <script>
 	// @ts-nocheck
-
 	import '$lib/style.css';
 	import Header from '../components/Header.svelte';
 	import Proj from '../components/Proj.svelte';
@@ -19,8 +18,17 @@
 	import pl4 from '$lib/assets/project/arcade_planet.svg';
 	import pl5 from '$lib/assets/project/bigbang_planet.svg';
 
+	import item1 from '$lib/assets/project/clip_a.svg';
+	import item2 from '$lib/assets/project/disns_a.svg';
+	import item3 from '$lib/assets/project/bucket_a.svg';
+	import item4 from '$lib/assets/project/arcade_a.svg';
+	import item5 from '$lib/assets/project/bigbang_a.svg';
+
 	import larr from '$lib/assets/leftarrow.svg';
 	import rarr from '$lib/assets/rightarrow.svg';
+
+	import planetMode from '$lib/assets/planetMode.svg';
+	import listMode from '$lib/assets/listMode.svg';
 
 	export let data;
 	console.log(data);
@@ -35,6 +43,8 @@
 
 	let planetName = ['fi', 'se', 'center', 'th', 'fo'];
 	let planetState = [0, 1, 2, 3, 4];
+
+	let itemSet = [item1, item2, item3, item4, item5];
 
 	// @ts-ignore
 	function changeCenter(dir) {
@@ -62,6 +72,17 @@
 		display = 1;
 		console.log(display);
 	}
+
+	let galaxyState = 1;
+	let listState = 0;
+	let temp;
+	// @ts-ignore
+	function changeState() {
+		temp = galaxyState;
+		galaxyState = listState;
+		listState = temp;
+		console.log(galaxyState, listState);
+	}
 </script>
 
 <Header />
@@ -78,7 +99,7 @@
 		</a>
 	</div>
 
-	<div class="galaxy" id="two">
+	<div id="two" class:galaxy={galaxyState} class:disnone={listState}>
 		{#each planetSet as e, idx}
 			<button
 				class="planet {e.name}"
@@ -89,21 +110,50 @@
 				<img src={e.planet} alt="planet" />
 			</button>
 		{/each}
-		<div class="mode">
+		<div class="planetMode">
 			<button
 				on:click={() => {
 					changeCenter('L');
-				}}><img src={larr} alt="" /></button
+				}}><img src={larr} alt="larr" /></button
 			>
 			<button
 				on:click={() => {
+					changeState();
+				}}
+			>
+				<img src={planetMode} alt="mode" />
+			</button>
+			<button
+				on:click={() => {
 					changeCenter('R');
-				}}><img src={rarr} alt="" /></button
+				}}><img src={rarr} alt="rarr" /></button
 			>
 		</div>
 	</div>
 
-	<div class="list disnone" id="three" />
+	<div class="list" id="three" class:list={listState} class:disnone={galaxyState}>
+		<div class="inner-list">
+			{#each itemSet as e, idx}
+				<button
+					class="item"
+					on:click={() => {
+						showProject((idx + 3) % 5);
+					}}
+				>
+					<img src={e} alt="item" />
+				</button>
+			{/each}
+		</div>
+		<div class="listMode">
+			<button
+				on:click={() => {
+					changeState();
+				}}
+			>
+				<img src={listMode} alt="mode" />
+			</button>
+		</div>
+	</div>
 
 	<div class={display ? 'proj disflex' : 'proj disnone'}>
 		<Proj
@@ -288,17 +338,63 @@
 		height: 16rem;
 	}
 
-	.mode {
+	/* List #three */
+	.list {
+		height: 100vh;
+		width: 100%;
+		backdrop-filter: blur(10px) brightness(60%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.inner-list {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.item {
+		background: none;
+		border: none;
+		border-radius: 16px;
+		transition: ease-in-out 300ms;
+	}
+
+	.item img {
+		height: 30rem;
+		transition: ease-in-out 300ms;
+	}
+
+	.item img:hover {
+		height: 32rem;
+	}
+
+	/* mode */
+	.planetMode {
 		margin-bottom: 5rem;
 	}
 
-	.mode button {
+	.planetMode button {
 		background: none;
 		border: none;
-		border-radius: 100%;
+		border-radius: 100px;
 	}
 
-	/* List #three */
+	.listMode {
+		position: fixed;
+		bottom: 5rem;
+	}
+
+	.listMode button {
+		background: none;
+		border: none;
+		border-radius: 100px;
+	}
 
 	/* Project */
 	.proj {
