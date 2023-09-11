@@ -10,7 +10,7 @@
     export let portraitNum;
     onMount(() => {
         let canvas = document.getElementById("qrTarget");
-        QRCode.toCanvas(canvas, `https://qwerty-universe.vercel.app//card/qr?name=${name}&job=${job}&portraitNum=${portraitNum}`, function (error) {
+        QRCode.toCanvas(canvas, `https://qwerty-universe.vercel.app/card/qr?name=${name}&job=${job}&portraitNum=${portraitNum}`, function (error) {
             if (error) console.error(error)
             console.log('success!');
         })
