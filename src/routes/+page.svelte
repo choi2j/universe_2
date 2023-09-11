@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import '$lib/style.css';
 	import Header from '../components/Header.svelte';
 	import Proj from '../components/Proj.svelte';
@@ -78,7 +80,12 @@
 
 	<div class="galaxy" id="two">
 		{#each planetSet as e, idx}
-			<button class="planet {e.name}" on:click={() => {showProject((idx + 3) % 5)}}>
+			<button
+				class="planet {e.name}"
+				on:click={() => {
+					showProject((idx + 3) % 5);
+				}}
+			>
 				<img src={e.planet} alt="planet" />
 			</button>
 		{/each}
@@ -105,7 +112,7 @@
 			src={data2[state].src}
 			team={data2[state].team}
 			gainedLike={data.countries[state].likes}
-			bind:display={display}
+			bind:display
 		/>
 	</div>
 </div>
@@ -123,7 +130,7 @@
 	.disnone {
 		display: none;
 	}
-	
+
 	.disflex {
 		display: flex;
 	}
@@ -190,27 +197,27 @@
 
 	/* planet positoin */
 	.fi {
-		top: calc(100vh + 30rem);
-		left: 10vw;
+		top: calc(100vh + 40rem);
+		left: 13vw;
 	}
 
 	.se {
-		top: calc(100vh + 5rem);
-		left: 25vw;
+		top: calc(100vh + 10rem);
+		left: 27vw;
 	}
 
 	.center {
 		top: calc(100vh + 30vh);
-		left: 38vw;
+		left: 39vw;
 	}
 
 	.th {
-		top: calc(100vh + 5rem);
-		left: 60vw;
+		top: calc(100vh + 15rem);
+		left: 65vw;
 	}
 
 	.fo {
-		top: calc(100vh + 30rem);
+		top: calc(100vh + 40rem);
 		left: 80vw;
 	}
 
@@ -224,7 +231,7 @@
 	}
 
 	.center img {
-		height: 25rem;
+		height: 30rem;
 	}
 
 	.th img {
@@ -237,27 +244,27 @@
 
 	/* hover effect */
 	.fi:hover {
-		top: calc(100vh + 29.5rem);
-		left: calc(10vw - 0.5rem);
+		top: calc(100vh + 39.5rem);
+		left: calc(13vw - 0.5rem);
 	}
 
 	.se:hover {
-		top: calc(100vh + 4.5rem);
-		left: calc(25vw - 0.5rem);
+		top: calc(100vh + 9.5rem);
+		left: calc(27vw - 0.5rem);
 	}
 
 	.center:hover {
 		top: calc(100vh + 30vh - 0.5rem);
-		left: calc(38vw - 0.5rem);
+		left: calc(39vw - 0.5rem);
 	}
 
 	.th:hover {
-		top: calc(100vh + 4.5rem);
-		left: calc(60vw - 0.5rem);
+		top: calc(100vh + 14.5rem);
+		left: calc(65vw - 0.5rem);
 	}
 
 	.fo:hover {
-		top: calc(100vh + 29.5rem);
+		top: calc(100vh + 39.5rem);
 		left: calc(80vw - 0.5rem);
 	}
 
@@ -270,7 +277,7 @@
 	}
 
 	.center img:hover {
-		height: 26rem;
+		height: 31rem;
 	}
 
 	.th img:hover {
