@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import '$lib/style.css';
 	import Header from '../components/Header.svelte';
@@ -80,7 +80,12 @@
 
 	<div class="galaxy" id="two">
 		{#each planetSet as e, idx}
-			<button class="planet {e.name}" on:click={() => {showProject((idx + 3) % 5)}}>
+			<button
+				class="planet {e.name}"
+				on:click={() => {
+					showProject((idx + 3) % 5);
+				}}
+			>
 				<img src={e.planet} alt="planet" />
 			</button>
 		{/each}
@@ -107,7 +112,7 @@
 			src={data2[state].src}
 			team={data2[state].team}
 			gainedLike={data.countries[state].likes}
-			bind:display={display}
+			bind:display
 		/>
 	</div>
 </div>
@@ -125,7 +130,7 @@
 	.disnone {
 		display: none;
 	}
-	
+
 	.disflex {
 		display: flex;
 	}
