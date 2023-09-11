@@ -185,11 +185,11 @@
 
         <div id="inputs">
             <div class="inp">
-                <div class="t18 inp-div">이름  <span class="t12">영어로 입력해주세요.</span></div>
+                <div class="t18 inp-div">이름</div>
                 <input type="text" class="t18" placeholder="Kim Sunrin" bind:value={name}>
             </div>
             <div class="inp">
-                <div class="t18 inp-div">직무  <span class="t12">영어로 입력해주세요.</span></div>
+                <div class="t18 inp-div">직무</div>
                 <input type="text" class="t18" placeholder="Web Developer" bind:value={job}>
             </div>
             <div id="faceSelect">

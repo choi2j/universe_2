@@ -5,8 +5,8 @@ let data = [
         src: "src\\lib\\assets\\project\\buket_planet.svg",
         team: [
             {role:"Directed", name:"최재원", pf_path: "src\\lib\\assets\\profiles\\jaewonChoi.png"},
-
             {role:"Developed", name:"김정우", pf_path: "src\\lib\\assets\\profiles\\jeongwooKim.png"},
+            {role:"Developed", name:"최진호", pf_path: "src\\lib\\assets\\profiles\\default.png"},
             {role:"Designed", name:"Jimin", pf_path: "src\\lib\\assets\\profiles\\jiminKim.png"},
         ],
         link:""
