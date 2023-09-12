@@ -150,15 +150,7 @@
 		}
 	}
 
-	async function sendPost() {
-		const response = await fetch('/card/qr', {
-            method: 'POST',
-            body: JSON.stringify({ name, job, currNum }),
-            headers: {
-                'content-type': 'application/json'
-            }
-        });
-	}
+	console.log('asdf');
 </script>
 
 <Header />
