@@ -16,9 +16,9 @@
 </script>
 
 <Header />
-<div class="background"/>
+<div class="background" style={`background-image: url(${bg})`}/>
 
-<div id="intro" style={`background-image: url(${bg})`}>
+<div id="intro">
 	<img src={moto} alt="moto" class="moto" />
 	<p class="text">
 		유니버스는 웹 개발 동아리 QWERTY의 2023년 동아리 전시회에요.<br />
@@ -69,7 +69,8 @@
 		width: 100%;
 		position: fixed;
 		z-index: -10;
-		background: #070813;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	/* Intro */
@@ -81,7 +82,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10rem;
+		gap: 4.5rem;
 		padding: 5rem;
 	}
 

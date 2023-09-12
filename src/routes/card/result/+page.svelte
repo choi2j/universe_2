@@ -4,23 +4,13 @@
     import logo from '$lib/assets/universe_logo.png';
 	import barcode from '$lib/assets/card/card_barcode.png';
     export let data;
-    console.log(data);
     // @ts-ignore
     let port = Number(data.port);
-    const portraits = import.meta.glob('$lib/assets/portraits/*.png');
-	/**
-	 * @type {any[]}
-	 */
-	let portraitPaths = [];
-
-    for (const modulePath in portraits) {
-		portraitPaths.push(modulePath);
-	}
+    import portraits from '$lib/portraits_png.js';
 
     import * as htmlToImage from 'html-to-image';
     import * as download from 'downloadjs';
 function downloadFile() {
-    console.log('temp1');
     // @ts-ignore
     
     htmlToImage.toPng(document.getElementById('sample'))
@@ -35,7 +25,7 @@ function downloadFile() {
         <div class="card-bg">
             <div class="card-inner">
                 <img id="logo" src={logo} alt="logo" />
-                <img id="background" src={portraitPaths[port]} alt="face" />
+                <img id="background" src={portraits[port]} alt="face" />
                 <div id="name">{data.name}</div>
                 <div id="job">{data.job}</div>
                 <img id="barcode" src={barcode} alt="barcode" />
@@ -190,6 +180,7 @@ function downloadFile() {
 		z-index: 2;
 		text-transform: uppercase;
 		font-size: 1.75rem;
+		font-weight: 600;
 	}
 
     button {

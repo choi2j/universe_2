@@ -65,7 +65,6 @@
 				nextNum = currNum + 1;
 			}
 		}
-		console.log(`${prevNum},${currNum},${nextNum}`);
 	}
 
 	function rightButton() {
@@ -106,7 +105,6 @@
 				nextNum = currNum + 1;
 			}
 		}
-		console.log(`${prevNum},${currNum},${nextNum}`);
 	}
 
 	function headButton() {
@@ -126,8 +124,6 @@
 		} else {
 			nextNum = currNum + 8;
 		}
-
-		console.log(selectMode);
 	}
 
 	function clothesButton() {
@@ -136,7 +132,6 @@
 		clothes.style.backgroundColor = 'rgba(255,255,255,0.8)';
 		clothes.style.color = '#1e1e1e';
 		selectMode = 'clothes';
-		console.log(selectMode);
 
 		if (currNum % 8 == 0) {
 			prevNum = currNum + 7;
@@ -149,8 +144,6 @@
 			nextNum = currNum + 1;
 		}
 	}
-
-	console.log('asdf');
 </script>
 
 <Header />
@@ -310,6 +303,7 @@
 		z-index: 2;
 		text-transform: uppercase;
 		font-size: 1.75rem;
+		font-weight: 600;
 	}
 
 	.card {

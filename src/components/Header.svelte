@@ -21,7 +21,8 @@
 		align-items: center;
 		justify-content: center;
 		padding: 0.5rem 12.5rem;
-		background: var(--dark);
+		background: rgba(0, 0, 0, 0.20);
+		backdrop-filter: blur(6px);
 		position: fixed;
 		width: 100%;
 		z-index: 10;

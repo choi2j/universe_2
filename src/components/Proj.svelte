@@ -178,6 +178,7 @@
 		z-index: 2;
 		text-transform: uppercase;
 		font-size: 1.75rem;
+		font-weight: 600;
 	}
 
 	.profile {

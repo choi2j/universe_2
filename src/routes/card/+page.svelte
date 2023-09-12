@@ -1,7 +1,7 @@
 <script>
 	import '$lib/style.css';
 
-	import text from '$lib/assets/card/myIDCardText.svg';
+	import text from '$lib/assets/card/image.png';
 	import card from '$lib/assets/card/IDCardSample.svg';
 	import bg4 from '$lib/assets/background4.png';
 
@@ -79,8 +79,9 @@
 	}
 
 	#text {
-		height: 150px;
-		margin-bottom: 24px;
+		width: 60rem;
+		margin-bottom: 0;
+		margin-top: -5rem;
 	}
 
 	#text2 {
@@ -132,6 +133,7 @@
 		z-index: 2;
 		text-transform: uppercase;
 		font-size: 1.75rem;
+		font-weight: 600;
 	}
 
 	.card {

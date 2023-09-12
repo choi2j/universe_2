@@ -5,23 +5,25 @@
     import background from "$lib/assets/background4.png";
     import QRCode from 'qrcode';
     import { onMount } from 'svelte';
+	import Header from '../../../components/Header.svelte';
     // import name from './+page.server';
 	// import job from './+page.server';
 	// import portrait from './+page.server';
 	export let form;
-	console.log(form);
 	let name = encodeURIComponent(form.name);
 	let job = encodeURIComponent(form.job);
     onMount(() => {
         let canvas = document.getElementById("qrTarget");
 		let targetUrl = `https://qwerty-universe.vercel.app/card/result?name=${name}&job=${job}&portraitNum=${form.portrait}`;
+		console.log(targetUrl);
         QRCode.toCanvas(canvas, targetUrl, function (error) {
             if (error) console.error(error)
-            console.log('success!');
         })
 
     });
 </script>
+
+<Header />
 
 <div id="main" style="background-image: url({background});">
     <div id="sample" class="card">

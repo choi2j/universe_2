@@ -31,7 +31,6 @@
 	import listMode from '$lib/assets/listMode.svg';
 
 	export let data;
-	console.log(data);
 
 	let planetSet = [
 		{ name: 'fi', planet: pl1 },
@@ -273,23 +272,23 @@
 
 	/* static img size */
 	.fi img {
-		height: 14rem;
-	}
-
-	.se img {
 		height: 12rem;
 	}
 
+	.se img {
+		height: 11rem;
+	}
+
 	.center img {
-		height: 30rem;
+		height: 25rem;
 	}
 
 	.th img {
-		height: 10rem;
+		height: 8.5rem;
 	}
 
 	.fo img {
-		height: 15rem;
+		height: 12.5rem;
 	}
 
 	/* hover effect */
