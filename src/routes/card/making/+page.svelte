@@ -1,4 +1,5 @@
 <script>
+    import '$lib/style.css';
 	import logo from '$lib/assets/universe_logo.svg';
 	import barcode from '$lib/assets/card/card_barcode.svg';
 	import leftArrow from '$lib/assets/leftarrow.svg';
@@ -162,6 +163,16 @@
 			nextNum = currNum + 1;
 		}
 	}
+
+	async function sendPost() {
+		const response = await fetch('/card/qr', {
+            method: 'POST',
+            body: JSON.stringify({ name, job, currNum }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        });
+	}
 </script>
 
 <Header />
@@ -182,7 +193,6 @@
 			<div class="card-border" />
 		</div>
 
-<<<<<<< HEAD
         <div id="inputs">
             <div class="inp">
                 <div class="t18 inp-div">이름</div>
@@ -216,72 +226,18 @@
             
         </div>
     </div>
+	<form action="/card/qr" method="post">
+		<input type="text" class="hidden" value="{name}" name="name">
+		<input type="text" class="hidden" value="{job}" name="job">
+		<input type="number" class="hidden" value="{currNum}" name="currNum">
+		<button type="submit" class="btn">
+			<div class="btn-bg" />
+			<div class="btn-border" />
+			<div class="btn-text">인증 카드 받기</div>
+		</button>
+	</form>
     
-    <a href="/card/result" class="btn">
-=======
-		<div id="inputs">
-			<div class="inp">
-				<div class="t18 inp-div">이름 <span class="t12">영어로 입력해주세요.</span></div>
-				<input type="text" class="t18" placeholder="Kim Sunrin" bind:value={name} />
-			</div>
-			<div class="inp">
-				<div class="t18 inp-div">직무 <span class="t12">영어로 입력해주세요.</span></div>
-				<input type="text" class="t18" placeholder="Web Developer" bind:value={job} />
-			</div>
-			<div id="faceSelect">
-				<img src={facePaths[prevNum]} alt="prev" />
-				<img src={facePaths[currNum]} alt="curr" />
-				<img src={facePaths[nextNum]} alt="next" />
-			</div>
-			<div id="buttons">
-				<button
-					id="leftButton"
-					on:click={() => {
-						leftButton();
-					}}
-				>
-					<img class="arrow" src={leftArrow} alt="leftArrow" />
-				</button>
-				<div id="headToggle">
-					<div id="headToggle-bg">
-						<button
-							class="toggleButton"
-							id="head"
-							bind:this={head}
-							on:click={() => {
-								headButton();
-							}}>머리</button
-						>
-						<div id="temp8" />
-						<button
-							class="toggleButton"
-							id="clothes"
-							bind:this={clothes}
-							on:click={() => {
-								clothesButton();
-							}}>상의</button
-						>
-					</div>
-					<div id="headToggle-border" />
-				</div>
-				<button
-					id="rightButton"
-					on:click={() => {
-						rightButton();
-					}}
-				>
-					<img class="arrow" src={rightArrow} alt="rightArrow" />
-				</button>
-			</div>
-		</div>
-	</div>
-
-	<a href="/card/result" class="btn">
->>>>>>> 0fcd43022b1e463d9f5645847e961df803f69750
-		<div class="btn-bg" />
-		<div class="btn-border" />
-		<div class="btn-text">인증 카드 받기</div>
-	</a>
+    
 </div>
 
 <style>
@@ -326,6 +282,7 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 5rem;
+		margin-top: 7rem;
 	}
 
 	#makingCard {
@@ -338,7 +295,7 @@
 	}
 
 	.btn {
-		position: fixed;
+		/* position: fixed; */
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: auto;
@@ -540,4 +497,9 @@
 	.inp-div {
 		margin-bottom: 12px;
 	}
+
+	.hidden {
+		display: none;
+	}
+
 </style>
