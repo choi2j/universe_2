@@ -7,7 +7,6 @@
 	export let src;
 	export let team;
 	export let gainedLike;
-	import circ from "$lib/assets/props/whiteCircle.svg";
 	import leftArrow from "$lib/assets/leftarrow.svg";
 	import flag from "$lib/assets/project/flag.svg";
 
