@@ -36,7 +36,7 @@
 	for (let modulePath in portraits) {
 		// @ts-ignore
 		modulePath = modulePath.substr(8);
-		modulePath = 'https://qwerty-universe.vercel.app/_app/immutable' + modulePath;
+		modulePath = '/_app/immutable' + modulePath;
 		console.log(modulePath);
 		portraitPaths.push(modulePath);
 	}
