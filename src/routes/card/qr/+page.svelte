@@ -29,8 +29,9 @@
             <div class="card-inner">
                 <img id="logo" src={logo} alt="logo" />
                 <canvas id="qrTarget"></canvas>
-                <div class="text name">S. I. H. S.</div>
-                <div class="text date">2023.09.15</div>
+                <div class="text name">S. R. I. H. S.</div>
+                <div class="text small">2023.09.15</div>
+				<div class="text small">Certified by QWERTY.</div>
             </div>
         </div>
         <div class="card-border" />
@@ -41,6 +42,10 @@
     #main {
         width: 100%;
         height: 100%;
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .card {
@@ -94,15 +99,34 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
     #logo {
 		width: 227px;
+		margin-top: 1.5rem;
 	}
 
     .text {
         color: white;
     }
+
+	#qrTarget {
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+		border-radius: 0.75rem;
+	}
+
+	.name {
+		font-size: 2rem;
+		font-weight: 800;
+		margin-bottom: 8rem;
+	}
+
+	.small {
+		position: relative;
+		font-size: 0.75rem;
+		bottom: 1rem;
+	}
 </style>
 

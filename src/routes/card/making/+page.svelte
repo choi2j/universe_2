@@ -7,7 +7,7 @@
 	import bg4 from '$lib/assets/background4.png';
 	import Header from '../../../components/Header.svelte';
 
-	const portraits = import.meta.glob('$lib/assets/portraits/*.png');
+	const portraits = import.meta.glob('$lib/assets/portraits/*.svg');
 	const faces = import.meta.glob('$lib/assets/faces/*.svg');
 
 	let name = 'Kim Sunrin';
@@ -33,7 +33,11 @@
 	 */
 	let facePaths = [];
 
-	for (const modulePath in portraits) {
+	for (let modulePath in portraits) {
+		// @ts-ignore
+		modulePath = modulePath.substr(8);
+		modulePath = 'https://qwerty-universe.vercel.app/_app/immutable' + modulePath;
+		console.log(modulePath);
 		portraitPaths.push(modulePath);
 	}
 
