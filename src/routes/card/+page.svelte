@@ -2,7 +2,6 @@
 	import '$lib/style.css';
 
 	import text from '$lib/assets/card/image.png';
-	import card from '$lib/assets/card/IDCardSample.svg';
 	import bg4 from '$lib/assets/background4.png';
 
 	import logo from '$lib/assets/universe_logo.svg';
