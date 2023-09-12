@@ -33,11 +33,7 @@
 	 */
 	let facePaths = [];
 
-	for (let modulePath in portraits) {
-		// @ts-ignore
-		modulePath = modulePath.substr(8);
-		modulePath = '/_app/immutable' + modulePath;
-		console.log(modulePath);
+	for (const modulePath in portraits) {
 		portraitPaths.push(modulePath);
 	}
 
