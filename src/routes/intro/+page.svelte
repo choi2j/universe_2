@@ -87,7 +87,6 @@
 
 	.moto {
 		height: 15rem;
-		width: fit-content;
 	}
 
 	.text {

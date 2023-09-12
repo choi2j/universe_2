@@ -1,13 +1,13 @@
 <script>
     import '$lib/style.css';
 	import bg4 from "$lib/assets/background4.png";
-    import logo from '$lib/assets/universe_logo.svg';
-	import barcode from '$lib/assets/card/card_barcode.svg';
+    import logo from '$lib/assets/universe_logo.png';
+	import barcode from '$lib/assets/card/card_barcode.png';
     export let data;
     console.log(data);
     // @ts-ignore
     let port = Number(data.port);
-    const portraits = import.meta.glob('$lib/assets/portraits/*.svg');
+    const portraits = import.meta.glob('$lib/assets/portraits/*.png');
 	/**
 	 * @type {any[]}
 	 */
@@ -18,9 +18,11 @@
 	}
 
     import * as htmlToImage from 'html-to-image';
-    let download = require("downloadjs");
+    import * as download from 'downloadjs';
 function downloadFile() {
+    console.log('temp1');
     // @ts-ignore
+    
     htmlToImage.toPng(document.getElementById('sample'))
         .then(function (dataUrl) {
         download(dataUrl, 'my-node.png');
@@ -190,4 +192,8 @@ function downloadFile() {
 		font-size: 1.75rem;
 	}
 
+    button {
+        border: none;
+        background: none;
+    }
 </style>
