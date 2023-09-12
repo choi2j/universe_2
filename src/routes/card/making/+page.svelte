@@ -7,8 +7,8 @@
 	import bg4 from '$lib/assets/background4.png';
 	import Header from '../../../components/Header.svelte';
 
-	const portraits = import.meta.glob('$lib/assets/portraits/*.svg');
-	const faces = import.meta.glob('$lib/assets/faces/*.svg');
+	import portraitPaths from '$lib/portraits';
+	import facePaths from '$lib/face';
 
 	let name = 'Kim Sunrin';
 	let job = 'Developer';
@@ -24,24 +24,8 @@
 	 * @type {HTMLButtonElement}
 	 */
 	let clothes;
-	/**
-	 * @type {any[]}
-	 */
-	let portraitPaths = [];
-	/**
-	 * @type {any[]}
-	 */
-	let facePaths = [];
+	
 
-	for (const modulePath in portraits) {
-		portraitPaths.push(modulePath);
-	}
-
-	for (const modulePath in faces) {
-		facePaths.push(modulePath);
-	}
-
-	console.log(portraitPaths);
 
 	function leftButton() {
 		if (selectMode === 'head') {
