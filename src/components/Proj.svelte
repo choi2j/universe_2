@@ -49,7 +49,7 @@
 
 	<div class="f5426">
         <button on:click={() => {display = 0}}>
-            <img src={leftArrow} alt="flag">
+            <img src={leftArrow} alt="back">
         </button>
         <a href="만든 프로젝트 링크" class="btn">
             <div class="btn-bg" />

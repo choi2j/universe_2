@@ -1,59 +1,69 @@
 <script>
+// @ts-nocheck
+
     import '$lib/style.css';
 	import bg4 from "$lib/assets/background4.png";
     import logo from '$lib/assets/universe_logo.png';
 	import barcode from '$lib/assets/card/card_barcode.png';
+	import { onMount } from 'svelte';
     export let data;
     // @ts-ignore
     let port = Number(data.port);
     import portraits from '$lib/portraits_png.js';
 
     import * as htmlToImage from 'html-to-image';
-    import * as download from 'downloadjs';
-function downloadFile() {
-    // @ts-ignore
-    
-    htmlToImage.toPng(document.getElementById('sample'))
-        .then(function (dataUrl) {
-        download(dataUrl, 'my-node.png');
+	onMount(() => {
+		let node = document.getElementById('sample');
+		// @ts-ignore
+		htmlToImage.toPng(node)
+		.then(function (dataUrl) {
+			console.log(dataUrl);
+			document.querySelector('#asdfasdf').href = dataUrl;
+		})
+		.catch(function (error) {
+			console.error('oops, something went wrong!', error);
+		});
     });
-}
+
 </script>
 
 <div id="screen" style="background-image: url({bg4});">
-    <div id="sample" class="card">
-        <div class="card-bg">
-            <div class="card-inner">
-                <img id="logo" src={logo} alt="logo" />
-                <img id="background" src={portraits[port]} alt="face" />
-                <div id="name">{data.name}</div>
-                <div id="job">{data.job}</div>
-                <img id="barcode" src={barcode} alt="barcode" />
-                <div id="date">2023.09.15</div>
-            </div>
-        </div>
-        <div class="card-border" />
-    </div>
-    <button on:click={() => {downloadFile()}} class="btn">
-        <div class="btn-bg" />
-        <div class="btn-border" />
-        <div class="btn-text">다운로드</div>
-    </button>
+	<div id="page">
+		<div id="sample" class="card">
+			<div class="card-bg">
+				<div class="card-inner">
+					<img id="logo" src={logo} alt="logo" />
+					<img id="background" src={portraits[port]} alt="face" />
+					<div id="name">{data.name}</div>
+					<div id="job">{data.job}</div>
+					<img id="barcode" src={barcode} alt="barcode" />
+					<div id="date">2023.09.15</div>
+				</div>
+			</div>
+			<div class="card-border" />
+		</div>
+		<a download="Card.png" class="btn" id="asdfasdf">
+			<div class="btn-bg" />
+			<div class="btn-border" />
+			<div class="btn-text">다운로드</div>
+		</a>
+	</div>
+    
 </div>
 
 <style>
     #screen {
         height: 100%;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     #page {
         height: 100%;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(50px);
     }

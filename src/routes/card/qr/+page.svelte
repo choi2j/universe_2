@@ -26,29 +26,39 @@
 <Header />
 
 <div id="main" style="background-image: url({background});">
-    <div id="sample" class="card">
-        <div class="card-bg">
-            <div class="card-inner">
-                <img id="logo" src={logo} alt="logo" />
-                <canvas id="qrTarget"></canvas>
-                <div class="text name">S. R. I. H. S.</div>
-                <div class="text small">2023.09.15</div>
-				<div class="text small">Certified by QWERTY.</div>
-            </div>
-        </div>
-        <div class="card-border" />
-    </div>
+	<div id="page">
+		<div id="sample" class="card">
+			<div class="card-bg">
+				<div class="card-inner">
+					<img id="logo" src={logo} alt="logo" />
+					<canvas id="qrTarget"></canvas>
+					<div class="text name">S. R. I. H. S.</div>
+					<div class="text small">2023.09.15</div>
+					<div class="text small">Certified by QWERTY.</div>
+				</div>
+			</div>
+			<div class="card-border" />
+		</div>
+	</div>
+    
 </div>
 
 <style>
     #main {
         width: 100%;
         height: 100%;
-		display: flex;
+    }
+
+	#page {
+		height: 100%;
+        width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(50px);
+	}
 
     .card {
 		display: grid;
