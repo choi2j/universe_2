@@ -19,6 +19,8 @@
 		.then(function (dataUrl) {
 			console.log(dataUrl);
 			document.querySelector('#asdfasdf').href = dataUrl;
+			document.querySelector('#result').src = dataUrl;
+			node.style.display = 'none';
 		})
 		.catch(function (error) {
 			console.error('oops, something went wrong!', error);
@@ -42,6 +44,7 @@
 			</div>
 			<div class="card-border" />
 		</div>
+		<img alt="" id="result">
 		<a download="Card.png" class="btn" id="asdfasdf">
 			<div class="btn-bg" />
 			<div class="btn-border" />
@@ -148,6 +151,9 @@
 		margin-top: 35px;
 	}
 
+	#result {
+		width: 354px;
+	}
 	div {
 		color: white;
 	}
