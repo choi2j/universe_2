@@ -3,14 +3,13 @@
 	import Header from '../../components/Header.svelte';
 
 	import moto from '$lib/assets/home/universe_moto.png';
-	import httu from '$lib/assets/howToTravelUniversum.svg';
+	import logo from '$lib/assets/home/universe_qwerty.png';
 
+	import httu from '$lib/assets/intro/howToTravelUniversum.svg';
 	import screen from '$lib/assets/intro/a.svg';
 	import rocket from '$lib/assets/intro/b.svg';
 	import pen from '$lib/assets/intro/c.svg';
 	import flag from '$lib/assets/intro/d.svg';
-
-	import logo from '$lib/assets/home/universe_qwerty.png';
 
 	import bg from '$lib/assets/background5.png';
 </script>

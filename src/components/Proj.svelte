@@ -7,8 +7,14 @@
 	export let src;
 	export let team;
 	export let gainedLike;
-	import leftArrow from "$lib/assets/leftarrow.svg";
-	import flag from "$lib/assets/project/flag.svg";
+
+	import leftButton from "$lib/assets/project/leftButton.png";
+	import leftButtonHighlight from "$lib/assets/project/leftButtonHighlight.png";
+	import flagButton from "$lib/assets/project/flagButton.png";
+	import flagButtonHighlight from "$lib/assets/project/flagButtonHighlight.png";
+	
+	import enterButton from '$lib/assets/project/enterButton.png';
+	import enterButtonHighlight from '$lib/assets/project/enterButtonHighlight.png';
 
 	export let display;
 	console.log(gainedLike);
@@ -23,7 +29,42 @@
 			.then(console.log('success'))
 			.then(gainedLike++);
 		if (error) console.log(error);
+	}
 
+	function enterButtonMouseOver() {
+		// @ts-ignore
+		document.querySelector('#enter').src = enterButtonHighlight;
+		console.log('over');
+	}
+
+	function enterButtonMouseOut() {
+		// @ts-ignore
+		document.querySelector('#enter').src = enterButton;
+		console.log('out');
+	}
+
+	function flagButtonMouseOver() {
+		// @ts-ignore
+		document.querySelector('#flag').src = flagButtonHighlight;
+		console.log('over');
+	}
+
+	function flagButtonMouseOut() {
+		// @ts-ignore
+		document.querySelector('#flag').src = flagButton;
+		console.log('out');
+	}
+
+	function leftButtonMouseOver() {
+		// @ts-ignore
+		document.querySelector('#left').src = leftButtonHighlight;
+		console.log('over');
+	}
+
+	function leftButtonMouseOut() {
+		// @ts-ignore
+		document.querySelector('#left').src = leftButton;
+		console.log('out');
 	}
 </script>
 
@@ -49,15 +90,15 @@
 
 	<div class="f5426">
         <button on:click={() => {display = 0}}>
-            <img src={leftArrow} alt="back">
+            <img src={leftButton} alt="download" on:mouseover={() => {leftButtonMouseOver()}} on:mouseout={() => {leftButtonMouseOut()}} id="left">
         </button>
         <a href="만든 프로젝트 링크" class="btn">
-            <div class="btn-bg" />
-            <div class="btn-border" />
-            <div class="btn-text">확인해보기</div>
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<img src={enterButton} alt="download" on:mouseover={() => {enterButtonMouseOver()}} on:mouseout={() => {enterButtonMouseOut()}} id="enter">
         </a>
         <button on:click={() => {giveLikes()}}>
-            <img src={flag} alt="flag">
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+            <img src={flagButton} alt="download" on:mouseover={() => {flagButtonMouseOver()}} on:mouseout={() => {flagButtonMouseOut()}} id="flag">
         </button>
     </div>
 </div>
@@ -146,38 +187,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: auto;
-	}
-
-	.btn-bg {
-		border-radius: 60rem;
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 1;
-		background-color: #ffffff33;
-	}
-
-	.btn-border {
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 2;
-		border-radius: 60rem;
-		border: 3px solid transparent;
-		background: linear-gradient(-45deg, #8c8aff, #db74ff00, #db74ff00, #db74ff) border-box;
-		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-		-webkit-mask-composite: xor;
-		mask-composite: exclude;
-	}
-
-	.btn-text {
-		padding: 1rem 2.5rem;
-		grid-column: 1/2;
-		grid-row: 1/2;
-		white-space: nowrap;
-		color: white;
-		z-index: 2;
-		text-transform: uppercase;
-		font-size: 1.75rem;
-		font-weight: 600;
 	}
 
 	.profile {

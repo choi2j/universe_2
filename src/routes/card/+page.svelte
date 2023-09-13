@@ -8,6 +8,25 @@
 	import barcode from '$lib/assets/card/card_barcode.svg';
 	import portrait from '$lib/assets/portraits/portrait00.svg';
 	import Header from '../../components/Header.svelte';
+	import downloadButton from '$lib/assets/card/button_main1.png';
+	import downloadButtonHighlight from '$lib/assets/card/button_main1_highlight.png';
+	import { onMount } from 'svelte';
+
+	function buttonMouseOver() {
+		// @ts-ignore
+		document.querySelector('#button').src = downloadButtonHighlight;
+		console.log('over');
+	}
+
+	function buttonMouseOut() {
+		// @ts-ignore
+		document.querySelector('#button').src = downloadButton;
+		console.log('out');
+	}
+
+	onMount(() => {
+
+    });
 </script>
 
 <Header />
@@ -48,9 +67,8 @@
 	</div>
 
 	<a href="card/making" class="btn">
-		<div class="btn-bg" />
-		<div class="btn-border" />
-		<div class="btn-text">인증 카드 받기</div>
+		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+		<img src={downloadButton} alt="download" on:mouseover={() => {buttonMouseOver()}} on:mouseout={() => {buttonMouseOut()}} id="button">
 	</a>
 </div>
 
@@ -95,44 +113,9 @@
 	}
 
 	.btn {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto;
 		margin-top: 20px;
 		position: fixed;
 		top: 950px;
-	}
-
-	.btn-bg {
-		border-radius: 60rem;
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 1;
-		background-color: #ffffff33;
-	}
-
-	.btn-border {
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 2;
-		border-radius: 60rem;
-		border: 3px solid transparent;
-		background: linear-gradient(-45deg, #8c8aff, #db74ff00, #db74ff00, #db74ff) border-box;
-		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-		-webkit-mask-composite: xor;
-		mask-composite: exclude;
-	}
-
-	.btn-text {
-		padding: 1rem 2.5rem;
-		grid-column: 1/2;
-		grid-row: 1/2;
-		white-space: nowrap;
-		color: white;
-		z-index: 2;
-		text-transform: uppercase;
-		font-size: 1.75rem;
-		font-weight: 600;
 	}
 
 	.card {

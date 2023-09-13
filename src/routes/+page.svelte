@@ -3,9 +3,7 @@
 	import '$lib/style.css';
 	import Header from '../components/Header.svelte';
 	import Proj from '../components/Proj.svelte';
-
 	import data2 from '$lib/projData';
-
 	import bg from '$lib/assets/background1.png';
 
 	import uni1 from '$lib/assets/home/universe_qwerty.png';
