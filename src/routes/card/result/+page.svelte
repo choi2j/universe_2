@@ -14,17 +14,20 @@
     import * as htmlToImage from 'html-to-image';
 	onMount(() => {
 		let node = document.getElementById('sample');
-		// @ts-ignore
-		htmlToImage.toPng(node)
-		.then(function (dataUrl) {
-			console.log(dataUrl);
-			document.querySelector('#asdfasdf').href = dataUrl;
-			document.querySelector('#result').src = dataUrl;
-			node.style.display = 'none';
-		})
-		.catch(function (error) {
-			console.error('oops, something went wrong!', error);
-		});
+		setTimeout(() => {
+			// @ts-ignore
+			htmlToImage.toPng(node)
+			.then(function (dataUrl) {
+				console.log(dataUrl);
+				document.querySelector('#asdfasdf').href = dataUrl;
+				document.querySelector('#result').src = dataUrl;
+				node.style.display = 'none';
+			})
+			.catch(function (error) {
+				console.error('oops, something went wrong!', error);
+			});
+		}, 5000);
+		
     });
 
 </script>
