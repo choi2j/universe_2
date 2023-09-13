@@ -80,9 +80,44 @@
 		listState = temp;
 		console.log(galaxyState, listState);
 	}
+
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
+	let open = false;
+
+	function scrollToggle() {
+		open = !open;
+		console.log();
+	}
+
+	let scrollTop = null;
+	let scrollLeft = null;
+
+	function disableScroll() {
+		if (browser) {
+			scrollTop = window.pageYOffset || window.document.documentElement.scrollTop;
+			(scrollLeft = window.pageXOffset || window.document.documentElement.scrollLeft),
+				(window.onscroll = function () {
+					window.scrollTo(scrollLeft, scrollTop);
+				});
+		}
+	}
+
+	function enableScroll() {
+		if (browser) {
+			window.onscroll = function () {};
+		}
+	}
+
+	$: if (open) {
+		disableScroll();
+	} else {
+		enableScroll();
+	}
 </script>
 
-<Header />
+<Header bind:display bind:state bind:galaxyState bind:listState />
 
 <div id="home">
 	<div class="background" style={`background-image: url(${bg})`} />
@@ -102,6 +137,7 @@
 				class="planet {e.name}"
 				on:click={() => {
 					showProject((idx + 3) % 5);
+					scrollToggle();
 				}}
 			>
 				<img src={e.planet} alt="planet" />
@@ -135,6 +171,7 @@
 					class="item"
 					on:click={() => {
 						showProject((idx + 3) % 5);
+						scrollToggle();
 					}}
 				>
 					<img src={e} alt="item" />
@@ -160,11 +197,13 @@
 			team={data2[state].team}
 			gainedLike={data.countries[state].likes}
 			bind:display
+			bind:open
 		/>
 	</div>
 </div>
 
 <style scoped>
+
 	.background {
 		height: 100vh;
 		width: 100%;
@@ -270,23 +309,23 @@
 
 	/* static img size */
 	.fi img {
-		height: 12rem;
+		height: 14rem;
 	}
 
 	.se img {
-		height: 11rem;
+		height: 12rem;
 	}
 
 	.center img {
-		height: 25rem;
+		height: 30rem;
 	}
 
 	.th img {
-		height: 8.5rem;
+		height: 10rem;
 	}
 
 	.fo img {
-		height: 12.5rem;
+		height: 15rem;
 	}
 
 	/* hover effect */
