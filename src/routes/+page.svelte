@@ -196,6 +196,7 @@
 			src={data2[state].src}
 			team={data2[state].team}
 			gainedLike={data.countries[state].likes}
+			link={data2[state].link}
 			bind:display
 			bind:open
 		/>

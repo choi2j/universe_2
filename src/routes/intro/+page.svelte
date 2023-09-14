@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import '$lib/style.css';
 	import Header from '../../components/Header.svelte';
 

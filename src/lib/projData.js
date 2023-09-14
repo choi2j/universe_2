@@ -62,7 +62,7 @@ let data = [
 			{ role: 'Developed', name: '석지호', pf_path: jihoSeok },
 			{ role: 'Designed', name: 'Jimin', pf_path: jiminKim }
 		],
-		link: ''
+		link: '/etc'
 	},
 	{
 		title: 'DISNS',

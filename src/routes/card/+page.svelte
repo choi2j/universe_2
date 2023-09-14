@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import '$lib/style.css';
 
 	import text from '$lib/assets/card/image.png';

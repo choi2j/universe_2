@@ -7,6 +7,7 @@
 	export let src;
 	export let team;
 	export let gainedLike;
+	export let link;
 
 	import leftButton from '$lib/assets/project/leftButton.png';
 	import leftButtonHighlight from '$lib/assets/project/leftButtonHighlight.png';
@@ -109,7 +110,7 @@
 				id="left"
 			/>
 		</button>
-		<a href="만든 프로젝트 링크" class="btn">
+		<a href={link} class="btn">
 			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 			<img
 				src={enterButton}

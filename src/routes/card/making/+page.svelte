@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import '$lib/style.css';
 	import logo from '$lib/assets/universe_logo.svg';
 	import barcode from '$lib/assets/card/card_barcode.svg';
