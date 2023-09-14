@@ -10,13 +10,13 @@
 	import uni2 from '$lib/assets/home/universe_moto.png';
 	import arrow from '$lib/assets/arrow.svg';
 
-	import pl1 from '$lib/assets/project/clip_planet.svg';
+	import pl1 from '$lib/assets/project/clip_planet.png';
 	import pl2 from '$lib/assets/project/disns_planet.svg';
 	import pl3 from '$lib/assets/project/buket_planet.svg';
 	import pl4 from '$lib/assets/project/arcade_planet.svg';
 	import pl5 from '$lib/assets/project/bigbang_planet.svg';
 
-	import item1 from '$lib/assets/project/clip_a.svg';
+	import item1 from '$lib/assets/project/clip_a.png';
 	import item2 from '$lib/assets/project/disns_a.svg';
 	import item3 from '$lib/assets/project/bucket_a.svg';
 	import item4 from '$lib/assets/project/arcade_a.svg';
@@ -204,7 +204,6 @@
 </div>
 
 <style scoped>
-
 	.background {
 		height: 100vh;
 		width: 100%;

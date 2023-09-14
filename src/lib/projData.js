@@ -1,7 +1,7 @@
 import buketPlanet from '$lib/assets/project/buket_planet.svg';
 import arcadePlanet from '$lib/assets/project/arcade_planet.svg';
 import bigbangPlanet from '$lib/assets/project/bigbang_planet.svg';
-import clipPlanet from '$lib/assets/project/clip_planet.svg';
+import clipb from '$lib/assets/project/clip_b.png';
 import disnsPlanet from '$lib/assets/project/disns_planet.svg';
 
 import defaultImg from '$lib/assets/profiles/default.png';
@@ -51,12 +51,12 @@ let data = [
 			{ role: 'Developed', name: '박신영', pf_path: sinyeongPark },
 			{ role: 'Developed', name: '심현수', pf_path: hyeonsooSim }
 		],
-		link: 'qwerty-bigbang.vercel.app'
+		link: 'https://qwerty-bigbang.vercel.app'
 	},
 	{
 		title: 'StreamLine',
 		desc: '애플과 같은 연결성을 모든 곳에서.',
-		src: clipPlanet,
+		src: clipb,
 		team: [
 			{ role: 'Directed', name: '석지호', pf_path: jihoSeok },
 			{ role: 'Developed', name: '석지호', pf_path: jihoSeok },
