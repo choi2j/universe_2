@@ -1,17 +1,18 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import '$lib/style.css';
 
 	import text from '$lib/assets/card/image.png';
 	import bg4 from '$lib/assets/background4.png';
 
-	import logo from '$lib/assets/universe_logo.svg';
-	import barcode from '$lib/assets/card/card_barcode.svg';
-	import portrait from '$lib/assets/portraits/portrait00.svg';
 	import Header from '../../components/Header.svelte';
 	import downloadButton from '$lib/assets/card/button_main1.png';
 	import downloadButtonHighlight from '$lib/assets/card/button_main1_highlight.png';
+
+	import sampleCard from '$lib/assets/card/sampleCard.svg';
+	import sampleQR from '$lib/assets/card/sampleQR.svg';
+
 	import { onMount } from 'svelte';
 
 	function buttonMouseOver() {
@@ -26,9 +27,7 @@
 		console.log('out');
 	}
 
-	onMount(() => {
-
-    });
+	onMount(() => {});
 </script>
 
 <Header />
@@ -38,39 +37,25 @@
 		<img id="text" src={text} alt="" />
 		<p id="text2">유니버스카드로 유니버스에서의 추억을 간직해주세요.</p>
 		<div class="cards">
-			<div id="sample" class="card">
-				<div class="card-bg">
-					<div class="card-inner">
-						<img id="logo" src={logo} alt="logo" />
-						<img id="background" src={portrait} alt="face" />
-						<div id="name">Kim Sunrin</div>
-						<div id="job">Developer</div>
-						<img id="barcode" src={barcode} alt="barcode" />
-						<div id="date">2023.09.15</div>
-					</div>
-				</div>
-				<div class="card-border" />
-			</div>
+			<img id="sample" class="card" src={sampleCard} alt="sample" />
 
-			<div id="sample" class="cardQR">
-				<div class="card-bg">
-					<div class="card-inner">
-						<img id="logo" src={logo} alt="logo" />
-						<img id="background" src={portrait} alt="face" />
-						<div id="name">Kim Sunrin</div>
-						<div id="job">Developer</div>
-						<img id="barcode" src={barcode} alt="barcode" />
-						<div id="date">2023.09.15</div>
-					</div>
-				</div>
-				<div class="card-border" />
-			</div>
+			<img id="sample" class="cardQR" src={sampleQR} alt="sample" />
 		</div>
 	</div>
 
 	<a href="card/making" class="btn">
 		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-		<img src={downloadButton} alt="download" on:mouseover={() => {buttonMouseOver()}} on:mouseout={() => {buttonMouseOut()}} id="button">
+		<img
+			src={downloadButton}
+			alt="download"
+			on:mouseover={() => {
+				buttonMouseOver();
+			}}
+			on:mouseout={() => {
+				buttonMouseOut();
+			}}
+			id="button"
+		/>
 	</a>
 </div>
 
@@ -146,60 +131,6 @@
 		border-radius: 32px;
 	}
 
-	.card-bg {
-		border-radius: 32px;
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 1;
-	}
-
-	.card-border {
-		grid-column: 1/2;
-		grid-row: 1/2;
-		z-index: 2;
-		border-radius: 32px;
-		border: 3px solid transparent;
-		background: linear-gradient(-45deg, #8c8aff, #db74ff00, #db74ff00, #db74ff) border-box;
-		-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-		-webkit-mask-composite: xor;
-		mask-composite: exclude;
-	}
-
-	.card-inner {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	#logo {
-		width: 227px;
-	}
-
-	#background {
-		width: 180px;
-		margin: 28px 0;
-	}
-
-	#name {
-		font-size: 32px;
-		margin-bottom: 12px;
-		font-weight: 600;
-	}
-
-	#job {
-		font-size: 16px;
-		margin-bottom: 30px;
-		font-weight: 600;
-	}
-
-	#date {
-		font-size: 24px;
-		margin-top: 35px;
-	}
-
 	.card {
 		position: absolute;
 		animation-name: turnToNone;
@@ -256,10 +187,18 @@
 			display: flex;
 		}
 
+		25% {
+			opacity: 0.1;
+		}
+
 		50% {
 			transform: rotate3d(0, 1, 0, 180deg);
 			opacity: 0;
 			display: none;
+		}
+
+		75% {
+			opacity: 0.7;
 		}
 
 		100% {
@@ -276,10 +215,18 @@
 			display: none;
 		}
 
+		25% {
+			opacity: 0.7;
+		}
+
 		50% {
 			transform: rotate3d(0, 1, 0, 0deg);
 			opacity: 1;
 			display: flex;
+		}
+
+		75% {
+			opacity: 0.1;
 		}
 
 		100% {
