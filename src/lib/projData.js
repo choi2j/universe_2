@@ -51,7 +51,7 @@ let data = [
 			{ role: 'Developed', name: '박신영', pf_path: sinyeongPark },
 			{ role: 'Developed', name: '심현수', pf_path: hyeonsooSim }
 		],
-		link: ''
+		link: 'qwerty-bigbang.vercel.app'
 	},
 	{
 		title: 'StreamLine',
