@@ -29,7 +29,7 @@ let data = [
 			{ role: 'Developed', name: '김정우', pf_path: jeongwooKim },
 			{ role: 'Designed', name: 'Jimin', pf_path: jiminKim }
 		],
-		link: ''
+		link: 'https://qwerty-bucket.vercel.app'
 	},
 	{
 		title: 'Arcade',
@@ -40,7 +40,7 @@ let data = [
 			{ role: 'Developed', name: '이건', pf_path: geonLee },
 			{ role: 'Developed', name: '한태규', pf_path: taekyuHan }
 		],
-		link: ''
+		link: 'https://qwerty-arcade.vercel.app'
 	},
 	{
 		title: 'Big Bang',
@@ -73,7 +73,7 @@ let data = [
 			{ role: 'Developed', name: '박선후', pf_path: seonhooPark },
 			{ role: 'Designed', name: '박건희', pf_path: defaultImg }
 		],
-		link: ''
+		link: 'https://qwerty-disns.vercel.app'
 	}
 ];
 
