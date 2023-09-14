@@ -25,7 +25,7 @@ let data = [
 		src: buketPlanet,
 		team: [
 			{ role: 'Directed', name: '최재원', pf_path: jaewonChoi },
-
+			{ role: 'Developed', name: '최진호', pf_path: defaultImg },
 			{ role: 'Developed', name: '김정우', pf_path: jeongwooKim },
 			{ role: 'Designed', name: 'Jimin', pf_path: jiminKim }
 		],
