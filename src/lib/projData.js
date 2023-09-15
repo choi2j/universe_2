@@ -40,7 +40,7 @@ let data = [
 			{ role: 'Developed', name: '이건', pf_path: geonLee },
 			{ role: 'Developed', name: '한태규', pf_path: taekyuHan }
 		],
-		link: '/error'
+		link: 'https://qwerty-arcade.vercel.app/'
 	},
 	{
 		title: 'Big Bang',
